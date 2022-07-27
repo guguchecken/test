@@ -36,8 +36,8 @@ jobs:
           fetch-depth: '3'
           path: ./test
           repository: ${{ steps.ut-pr.outputs.resource }}
-      - name: Print Paths
+          ref: ${{ steps.ut-pr.outputs.branch }}
+      - name: UT Code Coverage
         run: |
           cd ${GITHUB_WORKSPACE}/test
-          ls **/*
           go test -v -cover -run ^Test ${{ steps.ut-pr.outputs.paths }}
