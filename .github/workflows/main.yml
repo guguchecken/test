@@ -39,5 +39,5 @@ jobs:
       - name: Print Paths
         run: |
           cd ${GITHUB_WORKSPACE}/test
-          ls
+          ls **/*
           go test -v -cover -run ^Test ${{ steps.ut-pr.outputs.paths }}
