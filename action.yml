@@ -1,0 +1,34 @@
+name: UT Coverage for New PR
+description: UT Coverage for New PR
+author: guguducken
+
+inputs:
+  token:
+    description: The user GitHub token for get data
+    required: true
+  covermode:
+    description: The go test covermode, have set, count, atomic
+    required: false
+    default: set
+  coverprofile: 
+    description: 
+    required: false
+  timeout:
+    description: The go test time to out
+    required: false
+    default: 30m
+  coverpkg: 
+    description: 
+    required: false
+  ignore:
+    description: The ignore path
+    required: false
+  append_command:
+    description: The command that user set
+    required: false
+
+runs:
+  using: "composite"
+  steps:
+    - id: get-pr-info
+      run: 
