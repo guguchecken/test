@@ -25,6 +25,7 @@ jobs:
         with:
           fetch-depth: '3'
           path: ./test
+          repository: ${{ github.env.pull_request.sender }}/${{ github.env.pull_request.repository.name }}
       - name: Setup Go environment
         uses: actions/setup-go@v3.2.1
         with:
