@@ -21,10 +21,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: '3'
-          path: ./test
       - name: Setup Go environment
         uses: actions/setup-go@v3.2.1
         with:
@@ -35,9 +31,13 @@ jobs:
         id: ut-pr
         with:
           github-token: ${{ secrets.ACTION_TOKEN }}
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '3'
+          path: ./test
+          repository: ${{ steps.ut-pr.outputs.resource }}
       - name: Print Paths
         run: |
           cd ${GITHUB_WORKSPACE}/test
-          ls
-          test_scope=${{ steps.ut-pr.outputs.paths }}
-          go test -v -cover -run ^Test ${test_scope}
+          ls **/*
+          go test -v -cover -run ^Test ${{ steps.ut-pr.outputs.paths }}
