@@ -36,6 +36,7 @@ jobs:
           fetch-depth: '3'
           path: ./test
           repository: ${{ steps.ut-pr.outputs.resource }}
+          set-safe-directory: false
       - name: Print Paths
         run: |
           cd ${GITHUB_WORKSPACE}/test
