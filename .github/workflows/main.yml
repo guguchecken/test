@@ -40,4 +40,4 @@ jobs:
           cd ${GITHUB_WORKSPACE}/test
           ls
           test_scope=${{ steps.ut-pr.outputs.paths }}
-          go test -v -cover -run ^Test ${test_scope}
+          go test -v -cover ${test_scope}
