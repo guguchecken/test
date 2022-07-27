@@ -1,4 +1,4 @@
-package git
+package ut
 
 import "testing"
 import "fmt"
