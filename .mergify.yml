@@ -5,3 +5,10 @@ pull_request_rules:
     actions:
       merge:
         method: merge
+  - name: label for Bug
+    conditions: 
+      - body~=(?m)- \[(?i)x\] BUG
+    actions:
+      label:
+        add:
+          - bug
