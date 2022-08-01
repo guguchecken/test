@@ -27,7 +27,7 @@ jobs:
           # The Go version to download (if necessary) and use. Supports semver spec and ranges.
           go-version: '1.18'
       - name: Get PR Changed Paths
-        uses: guguducken/change-paths-action@v0.0.2
+        uses: guguducken/change-paths-action@ignore_modify
         id: ut-pr
         with:
           github-token: ${{ secrets.ACTION_TOKEN }}
