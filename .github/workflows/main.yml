@@ -45,6 +45,6 @@ jobs:
       - name: Coverage Calculate
         run: |
           cd ${GITHUB_WORKSPACE}/test
-          awk -F '[ %\t]+' '{if($1=="ok"){if($5 < 75) print "error: the code coverage of "$2" is ",$5,"% is below 75%";exit 1;} if($1 == "?"){print "error: There are no test files in this path -- "$2;exit 1;}}' ut_coverage.raw
+          awk -F '[ %\t]+' '{if($1=="ok"){if($5 == ""[no"){print "warning: please move tested code file to "$2;exit 1;} else if($5 < 75) {print "error: the code coverage of "$2" is ",$5,"% is below 75%";exit 1;} else {print "The code coverage of "$1" is up to standard"}} else if($1 == "?"){print "error: There are no test files in this path -- "$2;exit 1;}}' ut_coverage.raw
           rm -rf ut_coverage.raw
           echo "ut_coverage finished"
