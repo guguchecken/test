@@ -31,7 +31,7 @@ jobs:
         id: ut-pr
         with:
           github-token: ${{ secrets.ACTION_TOKEN }}
-          ignore: "test/src/ut/,/,/test/src/te"
+          ignore: "test/src/ut/,/,/test/src/te,.github/"
       - uses: actions/checkout@v2
         with:
           fetch-depth: '3'
