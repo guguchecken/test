@@ -26,3 +26,12 @@ jobs:
         id: ut-pr
         with:
           size_token: ${{ secrets.ACTION_TOKEN }}
+          size: |
+            {
+              "xs":0,
+              "s":10,
+              "m":100,
+              "l":500,
+              "xl":1000,
+              "xxl":2000
+            }
