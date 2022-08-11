@@ -26,6 +26,7 @@ jobs:
         id: ut-pr
         with:
           size_token: ${{ secrets.ACTION_TOKEN }}
+          ignore: ".txt"
           sizes: >
             {
               "xs":0,
