@@ -22,7 +22,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Code Owner Check
-        uses: guguducken/label-size-action@v0.0.1
+        uses: guguducken/label-size-action@master
         id: ut-pr
         with:
           size_token: ${{ secrets.ACTION_TOKEN }}
