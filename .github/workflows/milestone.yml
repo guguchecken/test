@@ -1,0 +1,13 @@
+name: Add Milestone
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: guguducken/milestone-add-action@main
+        with:
+          action-token: ${{ secrets.ACTION_TOKEN}}
+    
