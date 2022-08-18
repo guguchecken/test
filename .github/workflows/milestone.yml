@@ -11,7 +11,7 @@ jobs:
         with:
           action-token: ${{ secrets.ACTION_TOKEN}}
           co-milestones: >
-            "{
-              [BUG]:v0.0.1
-            }"
+            {
+              \[BUG\]:v0.0.1
+            }
     
