@@ -10,7 +10,7 @@ jobs:
       - uses: guguducken/milestone-add-action@main
         with:
           action-token: ${{ secrets.ACTION_TOKEN}}
-          milestones: >
+          co-milestones: >
             "{
               [BUG]:v0.0.1
             }"
