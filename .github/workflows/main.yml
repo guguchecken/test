@@ -49,6 +49,7 @@ jobs:
       - name: Coverage Calculate
         if: ${{ steps.ut-pr.outputs.paths }} != ''
         run: |
+          echo ${{ steps.ut-pr.outputs.paths }}
           cd ${GITHUB_WORKSPACE}/test
           awk -F '[ %\t]+' '{if($1=="ok"){if($5 == "[no"){print "warning: please move tested code file to "$2;} else if($5 < 60) {print "error: the code coverage of "$2" is ",$5,"% is below 60%";} else {print "The code coverage of "$1" is "$5"%, this is up to standard"}} else if($1 == "?"){print "error: There are no test files in this path -- "$2;}}' ${{ env.raw_ut_coverage}}
           rm -rf ${{ env.raw_ut_coverage}}
