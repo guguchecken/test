@@ -11,7 +11,7 @@ jobs:
         with:
           action-token: ${{ secrets.ACTION_TOKEN}}
           milestones: >
-            {
+            "{
               [BUG]:v0.0.1
-            }
+            }"
     
